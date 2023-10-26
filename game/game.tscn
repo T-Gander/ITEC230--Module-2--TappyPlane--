@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dihqx3uut6jim"]
+[gd_scene load_steps=8 format=3 uid="uid://dihqx3uut6jim"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_l3jik"]
 [ext_resource type="Texture2D" uid="uid://cc2poho7vicys" path="res://assets/background/rocks_2.png" id="1_s1e4p"]
 [ext_resource type="PackedScene" uid="uid://dm3kyspuifiqx" path="res://planecb/plane_cb.tscn" id="2_jt2tc"]
 [ext_resource type="Script" path="res://planecb/plane_cb.gd" id="3_bd06d"]
 [ext_resource type="PackedScene" uid="uid://bnpl2evula3h5" path="res://pipes/pipes.tscn" id="4_y6sie"]
+[ext_resource type="PackedScene" uid="uid://dshmorycgkr3w" path="res://game_over/game_over.tscn" id="6_ngteh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n2wb0"]
 size = Vector2(493, 20)
@@ -39,5 +40,10 @@ position = Vector2(530, 540)
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 1.2
 autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameOver" parent="CanvasLayer" instance=ExtResource("6_ngteh")]
+visible = false
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

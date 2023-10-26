@@ -55,7 +55,7 @@ _data = {
 "fly": SubResource("Animation_a5nif")
 }
 
-[node name="PlaneCB" type="CharacterBody2D"]
+[node name="PlaneCB" type="CharacterBody2D" groups=["plane"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.75, 0.75)

@@ -13,3 +13,7 @@ func _process(delta):
 
 func on_screen_exited():
 	queue_free()
+
+func _on_pipe_body_entered(body):
+	if body.is_in_group(GameManager.GROUP_PLANE):
+		body.die()
